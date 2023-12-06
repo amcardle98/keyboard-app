@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="options">
+        Current Scale: 
+        <select name="rootNote" class="key" [(ngModel)]="selectedRootNote" (change)="updateScale()">
+            <option value="" selected>Select Key</option>
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="B">B</option>
+        </select>
+        <select name="scale" class="scale" [(ngModel)]="selectedScaleType" (change)="updateScale()">
+            <option value="" selected>Select Scale</option>
+            <option value="chromatic">Chromatic</option>
+            <option value="major">Major</option>
+            <option value="minor">Minor</option>
+        </select>
+    </div>
+</div>
+<div>
+  Octave: {{ currentOctave }}
+  <br />
+  <button (click)="currentOctave = currentOctave - 1">-</button>
+  <button (click)="currentOctave = currentOctave + 1">+</button>
+  <br>
+  <br>
+</div>
+<div class="keyboard">
+  <div class="white" (click)="playSound('C')" [ngClass]="{'highlighted': this.displayedScale.includes('C')}">
+    C
+  </div>
+  <div class="black" (mousedown)="playSound('C#')" id="2" [ngClass]="{'highlighted': this.displayedScale.includes('C#')}">
+    C#
+  </div>
+  <div class="white" (mousedown)="playSound('D')" id="3" [ngClass]="{'highlighted': this.displayedScale.includes('D')}" >
+    D
+  </div>
+  <div class="black" (mousedown)="playSound('D#')" id="4" [ngClass]="{'highlighted': this.displayedScale.includes('D#')}">
+    D#
+  </div>
+  <div class="white" (mousedown)="playSound('E')" id="5" [ngClass]="{'highlighted': this.displayedScale.includes('E')}">
+    E
+  </div>
+  <div class="white" (mousedown)="playSound('F')" id="6" [ngClass]="{'highlighted': this.displayedScale.includes('F')}">
+    F
+  </div>
+  <div class="black" (mousedown)="playSound('F#')" id="7" [ngClass]="{'highlighted': this.displayedScale.includes('F#')}">
+    F#
+  </div>
+  <div class="white" (mousedown)="playSound('G')" id="8" [ngClass]="{'highlighted': this.displayedScale.includes('G')}">
+    G
+  </div>
+  <div class="black" (mousedown)="playSound('G#')" id="9" [ngClass]="{'highlighted': this.displayedScale.includes('G#')}">
+    G#
+  </div>
+  <div class="white" (mousedown)="playSound('A')" id="10" [ngClass]="{'highlighted': this.displayedScale.includes('A')}">
+    A
+  </div>
+  <div class="black" (mousedown)="playSound('A#')" id="11" [ngClass]="{'highlighted': this.displayedScale.includes('A#')}">
+    A#
+  </div>
+  <div class="white" (mousedown)="playSound('B')" id="12" [ngClass]="{'highlighted': this.displayedScale.includes('B')}">
+    B
+  </div>
+</div>
