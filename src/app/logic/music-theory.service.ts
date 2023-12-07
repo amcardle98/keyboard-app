@@ -53,6 +53,10 @@ export class MusicTheoryService {
   }
 
   public getScale(rootNote: string, scaleType: string): string[] {
+    if (!this.precomputedScales[rootNote] || !this.precomputedScales[rootNote][scaleType]) {
+      return this.precomputedScales["C"]["chromatic"];
+    }
+
     return this.precomputedScales[rootNote][scaleType];
   }
 }

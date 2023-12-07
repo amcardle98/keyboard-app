@@ -10,8 +10,8 @@ const synth = new Tone.Synth().toDestination();
   styleUrls: ['./keyboard.component.scss'],
 })
 export class KeyboardComponent {
-  selectedRootNote = 'C';
-  selectedScaleType = 'Major';
+  selectedRootNote = '';
+  selectedScaleType = '';
   currentOctave = 4;
   displayedScale: string[] = [];
 
@@ -25,7 +25,7 @@ export class KeyboardComponent {
       this.selectedScaleType
     );
 
-    console.log(this.displayedScale);
+    this.selectedRootNote = this.displayedScale[0];
   }
 
   playSound(note: string) {

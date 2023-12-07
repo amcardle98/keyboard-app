@@ -17,13 +17,16 @@
             <option value="B">B</option>
         </select>
         <select name="scale" class="scale" [(ngModel)]="selectedScaleType" (change)="updateScale()">
-            <option value="" selected>Select Scale</option>
-            <option value="chromatic">Chromatic</option>
+            <option value="chromatic" selected>Chromatic</option>
             <option value="major">Major</option>
             <option value="minor">Minor</option>
         </select>
     </div>
 </div>
+<app-knob function="Reverb"></app-knob>
+<app-knob function="Delay"></app-knob>
+<app-knob function="Gain"></app-knob>
+<app-knob function="reverb"></app-knob>
 <div>
   Octave: {{ currentOctave }}
   <br />

@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="knob" (mousedown)="onMouseDown($event)">
+    <div class="notch" [ngStyle]="{ transform: getNotchTransform() }"></div>
+  </div>
+</div>
+<div>{{ function }}</div>
